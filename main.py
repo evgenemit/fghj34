@@ -1,10 +1,15 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from ajax import handle_uploaded_file
 
 
+load_dotenv()
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://ghjk_user:password@localhost/ghjk34'
+app.config['DEBUG'] = os.getenv('DEBUG') == 'True'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DB_URI')
 
 db = SQLAlchemy(app)
 
