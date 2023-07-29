@@ -48,7 +48,3 @@ def upload_file():
         else:
             return jsonify(records)
     return jsonify({'status': 'error'})
-
-
-if __name__ == '__main__':
-    app.run()
