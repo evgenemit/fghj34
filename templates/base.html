@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Главная{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+
+    <div class="header">
+        <div class="d-flex flex-row justify-content-start mx-auto w-50">
+            <a href="{{ url_for('home') }}" class="btn btn-secondary">Главная</a>
+            <a href="{{ url_for('result') }}" class="btn btn-secondary">Записи</a> 
+        </div>
+    </div>
+
+    <div class="content mt-5 mx-auto w-50">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    {% block javascript %}
+    {% endblock javascript %}
+
+</body>
+</html>
