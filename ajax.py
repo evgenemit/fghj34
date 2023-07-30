@@ -7,6 +7,8 @@ def handle_uploaded_file(file):
     """Обработка файла и сохранение данных"""
 
     try:
+        if file is None:
+            return {'status': 'error', 'message': 'Не передан файл.'}
         records = []
         file_content = file.read()
         if os.path.splitext(file.filename)[1] != '.json':

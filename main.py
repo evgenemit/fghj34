@@ -38,7 +38,7 @@ def result():
 def upload_file():
     """Загрузка json файла"""
     if request.method == 'POST':
-        records = handle_uploaded_file(request.files['file'])
+        records = handle_uploaded_file(request.files.get('file', None))
         if records['status'] == 'ok':
             records = records['records']
             for record in records:
