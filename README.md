@@ -26,7 +26,7 @@ GRANT ALL ON SCHEMA public TO public;
 
 ```bash
 DEBUG=True
-DB_URI=postgresql+psycopg2://ghjk_user:password@localhost/ghjk34
+DB_URI=postgresql+psycopg2://fghj_user:password@localhost/fghj34
 ```
 
 4. Создайте и активируйте виртуальное окружение:
